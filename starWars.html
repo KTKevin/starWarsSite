@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Star Wars script</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+  <script src="starWars.js"></script>
+</head>
+<body>
+	<div class = "container", align ="center" >
+		<h1> Star Wars<h1>
+	</div>
+	<div class = "form-group" align="center" >
+		<label for="usr">Type the name of the character<label>
+				
+		<input type ="text" class ="form-control" id="usrInput">
+		
+			
+
+	</div>
+	<div class ="container2" align="center" >
+
+		<p id='mass'></p>
+		<p id='hair_color'></p>
+		<p id='skin_color'></p>
+		<p id='eye_color'></p>
+		<p id='planet'></p>
+		<p id='movies'></p>
+
+		
+	</div>
+	<table class="table">
+
+  
+  <tbody>
+     <button onclick="readName()"> enter </button>
+ 
+    <tr>
+      <th scope="row"></th>
+      <td>height </td>
+      <td id="height"></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>mass</td>
+      <td id="mass"></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>hair color</td>
+      <td id="hair_color" ></td>
+    </tr>
+    <tr>
+	<th scope="row"></th>
+	<td>skin color</td>
+	<td id="skin_color"></td>
+    </tr>
+    <tr>
+	    <th scope="row"></th>
+	    <td> gender/sex </td>
+	    <td id="gender"></td>
+	    
+    </tr>	    
+
+  </tbody>
+</table>
+
+
+</body>
+</html>
