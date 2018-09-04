@@ -20,17 +20,39 @@ function readName(){
 	document.getElementById("species").innerHTML=re.data.name
 	})
 	var length = data.films.length
-	var i;
-	for(i=0; i<length; i++)
+	console.log(length)
+	let promises = [];
+		for(let i = 0; i < length; i++)
 		{
-			axios.get(data.films[i]).then(function(res){
-                        movieList = movieList + res.data.title +"\n"   
-			})
-			
+			promises.push(axios.get(data.films[i]));
+			console.log(data.films[i])
 		}
-	document.getElementById("movies").innerHTML = movieList	
+		console.log("promise size" + promises.length)
+		axios.all(promises).then(function(res){
+		      for (let i =0; i <promises.length; i++)
+			{
+			      
+			}
+		})
 	
+//	for( i=0; i<length; i++ )
+//		{ 
+//			console.log("im outside the axios")
+//			console.log(i)
+//			console.log(data.films[i])
+//			axios.get(data.films[i]).then(function(res, i){
+//				console.log("i made it here")
+//			document.getElementById("movies"+i).innerHTML=res.data.title
+//		
+//			})
 		
+//			
+//		}
+                   
+	
+
+
+
 })
 	
 }
