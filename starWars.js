@@ -4,11 +4,8 @@ var planetUrl
 var movieList;
 function readName(){
 	 name = document.getElementById("usrInput").value;
-	axios.get('https://swapi.co/api/people/?search='+name).then(function(response){
-	console.log("hello world")	
+	axios.get('https://swapi.co/api/people/?search='+name).then(function(response){	
 	data = response.data.results[0]
-        console.log('https://swapi.co/api/people/?search='+name)
-	console.log(data)
 	document.getElementById("height").innerHTML =  data.height;
 	document.getElementById("mass").innerHTML =data.mass;
 	document.getElementById("hair_color").innerHTML= data.hair_color
@@ -16,23 +13,25 @@ function readName(){
 	document.getElementById("homeworld").innerHTML=res.data.name;
 	})
         axios.get(data.species).then(function(re){
-	console.log(re.data.name)
 	document.getElementById("species").innerHTML=re.data.name
 	})
-	var length = data.films.length
-	console.log(length)
+	let length = data.films.length
 	let promises = [];
 		for(let i = 0; i < length; i++)
 		{
 			promises.push(axios.get(data.films[i]));
-			console.log(data.films[i])
 		}
-		console.log("promise size" + promises.length)
-		axios.all(promises).then(function(res){
-		      for (let i =0; i <promises.length; i++)
-			{
-			      
+
+		Promise.all(promises).then(function (value){
+			console.log(value);
+			console.log(value.length)
+			
+			for(var j=0; j <5; j++)
+			{      
+				console.log("movies"+j)
+				document.getElementById("movies"+j).innerHTML = value[j].data.title
 			}
+
 		})
 	
 //	for( i=0; i<length; i++ )
