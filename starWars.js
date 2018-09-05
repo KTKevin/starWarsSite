@@ -19,16 +19,79 @@ function readName(){
 	document.getElementById("species").innerHTML=re.data.name
 	})
 
-	let length = data.films.length
 	let promises = [];
-		for(let i = 0; i < length; i++)
+	var length = data.films.length;
+		if(length>0)
+		{ console.log("i made it here")
+		   axios.get(data.films[0]).then(function(res){
+			   console.log("i made it here 2");
+			   console.log(res.data.title)
+			   document.getElementById("movies0").innerHTML=res.data.title;
+		   })
+		}
+		if(length>1)
+		{
+			axios.get(data.films[1]).then(function(res){
+				document.getElementById("movies1").innerHTML=res.data.title;
+			})
+		
+		}
+		if(length>2)
+		{
+			axios.get(data.films[2]).then(function(res){
+				document.getElementById("movies2").innerHTML=res.data.title;
+			
+			})
+		
+		}
+
+		 if(length>3)
+                {
+                        axios.get(data.films[3]).then(function(res){
+                                document.getElementById("movies3").innerHTML=res.data.title;
+
+                        })
+
+                }
+		  if(length>4)
+                {
+                        axios.get(data.films[4]).then(function(res){
+                                document.getElementById("movies4").innerHTML=res.data.title;
+
+                        })
+
+                }
+                 if(length>5)
+                {
+                        axios.get(data.films[5]).then(function(res){
+                                document.getElementById("movies5").innerHTML=res.data.title;
+
+                        })
+
+                }
+
+                  if(length>6)
+                {
+                        axios.get(data.films[6]).then(function(res){
+                                document.getElementById("movies6").innerHTML=res.data.title;
+
+                        })
+
+                }
+
+                    
+
+
+	
+	/*	for(let i = 0; i < length; i++)
 		{
 			promises.push(axios.get(data.films[i]));
 		}
+	   
 
 		Promise.all(promises).then(function (value){
-		//	console.log(value);
-		//	console.log(value.length)
+			console.log(value);
+			console.log(value.length)
 			moviesList=value
 			console.log(moviesList)
 		        document.getElementById("movies0").innerHTML =value[0].data.title	
@@ -38,7 +101,7 @@ function readName(){
 				document.getElementById("movies"+j).innerHTML = value[j].data.title
 			}
 
-		})
+		}) */
 	
                    
 	})
