@@ -39,21 +39,7 @@ function readName(){
 			}
 
 		})
-	//	console.log(moviesList)
 	
-//	for( i=0; i<length; i++ )
-//		{ 
-//			console.log("im outside the axios")
-//			console.log(i)
-//			console.log(data.films[i])
-//			axios.get(data.films[i]).then(function(res, i){
-//				console.log("i made it here")
-//			document.getElementById("movies"+i).innerHTML=res.data.title
-//		
-//			})
-		
-//			
-//		}
                    
 	})
 	
